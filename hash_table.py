@@ -13,7 +13,7 @@ class hash_table:
     
     def insert(x):
         current_pos = find_pos(x)
-        counter++
+        counter = counter + 1
         if is_active(current_pos):
             return
         array[current_pos] = hash_entry(x, "ACTIVE", counter)
