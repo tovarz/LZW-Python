@@ -24,21 +24,21 @@ class hash_table:
             array[current_pos].info = "DELETED"
     
     def hash(key, table_size):  # hash function for the string
-    hash_value = 0
-    for i in range(0, len(key)):
-        hash_value = 37 * hash_value + key[i]
-    hash_value = hash_value % table_size
-    if hash_value < 0:
-        hash_value = hash_value + table_size
-    return hash_value
+        hash_value = 0
+        for i in range(0, len(key)):
+            hash_value = 37 * hash_value + key[i]
+        hash_value = hash_value % table_size
+        if hash_value < 0:
+            hash_value = hash_value + table_size
+        return hash_value
 
     def return_code(x):
         current_pos = find_pos(x)
         return array[current_pos]
     
     def find_pos(x):
-        current_pos = hash(x, len(array)):
-        while array[current_pos].info != "EMPTY" && array[current_pos].element != x:
+        current_pos = hash(x, len(array))
+        while array[current_pos].info != "EMPTY" and array[current_pos].element != x:
             current_pos += 1
             if current_pos >= len(array):
                 current_pos = current_pos - len(array)
