@@ -1,5 +1,8 @@
 from hash_table import hash_table
 
+debug = True
+
+
 def encode(in_file, table):
     s = ""
     holder = ""
@@ -19,8 +22,10 @@ def encode(in_file, table):
     return out_string
 def main():
     table = hash_table()
-    print("Enter file name:")
-    file_name = input()
+    file_name = "denme.txt"
+    if debug == False: 
+        print("Enter file name:")
+        file_name = input()
 
     f_in = open(file_name, "r")
     f_out = open("compressed_" + file_name, "w")
